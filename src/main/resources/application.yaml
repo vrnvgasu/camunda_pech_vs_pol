@@ -1,7 +1,11 @@
 spring.datasource.url: jdbc:h2:file:./camunda-h2-database
 
-camunda.bpm.admin-user:
-  id: demo
-  password: demo
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+  #default-serialization-format: application/json
 
 maxWarriors: 100
+
+url: https://fakerapi.it/api/v1/custom?name=firstName&title=name&number=number

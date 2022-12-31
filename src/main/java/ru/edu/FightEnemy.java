@@ -5,6 +5,7 @@ import java.util.Random;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.stereotype.Component;
+import ru.edu.domain.Warrior;
 
 @Component
 public class FightEnemy implements JavaDelegate {
@@ -12,7 +13,7 @@ public class FightEnemy implements JavaDelegate {
   @Override
   public void execute(DelegateExecution delegateExecution) throws Exception {
     // передали army в сервисном процессе PrepareToBattle
-    ArrayList<Boolean> army = (ArrayList<Boolean>) delegateExecution.getVariable("army");
+    ArrayList<Warrior> army = (ArrayList<Warrior>) delegateExecution.getVariable("army");
     int enemyWarriors = (int) delegateExecution.getVariable("enemyWarriors");
 
     // задержка на 2 сек, чтобы продемонстрировать обработку коллекции
